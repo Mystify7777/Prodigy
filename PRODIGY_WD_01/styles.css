@@ -8,8 +8,10 @@ body, h1, h2, h3, p, ul, li {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    color: #333;
 }
 
+/* Container */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -17,21 +19,20 @@ body {
     padding: 20px;
 }
 
-/* Header and Navigation */
+/* Navbar */
 header {
-    background: #333;
+    background: #007BFF;
     color: #fff;
-    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo img {
-    max-width: 100%;
+    padding: 10px 0;
 }
 
 .nav-links {
@@ -47,10 +48,12 @@ header {
     color: #fff;
     text-decoration: none;
     padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-links a:hover {
-    background: #555;
+    background: #0056b3;
+    color: #fff;
     border-radius: 5px;
 }
 
@@ -62,88 +65,103 @@ header {
 
 /* Hero Section */
 .hero {
-    background: #f4f4f4;
-    padding: 40px 0;
+    background: linear-gradient(to right, #007BFF, #00CFFF);
+    color: #fff;
+    padding: 60px 0;
     text-align: center;
 }
 
 .hero h1 {
     font-size: 2.5em;
+    margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
-.btn {
+.hero .btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #333;
+    background: #0056b3;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.btn:hover {
-    background: #555;
+.hero .btn:hover {
+    background: #003f7f;
 }
 
 /* About Section */
 .about {
-    padding: 40px 0;
-}
-
-.team {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-.team-member {
-    text-align: center;
-}
-
-.team-member img {
-    width: 100px;
-    border-radius: 50%;
-}
-
-/* Features Section */
-.features {
+    padding: 60px 0;
     background: #f4f4f4;
-    padding: 40px 0;
     text-align: center;
 }
 
-.features .feature {
+.about h2 {
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-.features h2 {
-    font-size: 2em;
-    margin-bottom: 10px;
+.about p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
-.features p {
-    font-size: 1.2em;
+/* Features Section */
+
+
+.features {
+    padding: 40px 0;
+    background: #f4f4f4;
 }
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-item img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.feature-content h3 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.feature-content p {
+    margin-top: 10px;
+    color: #666;
+}
+
+
 /* Service Section */
-/* .service{
-    margin: 10px auto;
-    padding: 10px auto;
-    transition: all 0.5s ease-in-out;
-}
-.service img{
-    border-radius:10%;
-    width : 20%
-}
-.service img:hover{
-    border-radius:30%;
-}
-.service:hover{
-    transform: scale(1.06);
-} */
- /* Container for services section */
 .services {
     padding: 40px 0;
     background-color: #f9f9f9;
@@ -172,19 +190,26 @@ header {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 }
 
 .service-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
 }
 
 /* Image styling */
 .service-img {
+    aspect-ratio: 4/3;
     width: 100%;
     height: auto;
     display: block;
+    transition: transform 0.3s;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.1);
 }
 
 /* Content inside the card */
@@ -203,12 +228,90 @@ header {
     font-size: 1em;
 }
 
+/* Hover effects on service content */
+.service-content h3:hover {
+    color: #007BFF;
+    transition: color 0.3s;
+}
 
-/* Responsive Styles */
+.service-content p:hover {
+    color: #007BFF;
+    transition: color 0.3s;
+}
+
+ /* Footer Section */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #FFD700; /* Example color for the section headers */
+}
+
+.footer-section p,
+.footer-section ul {
+    margin: 5px 0;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #FFD700; /* Matching the header color for hover effect */
+}
+
+/* Copyright section */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #555;
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+
+/* Media Queries */
 @media (max-width: 768px) {
     .nav-links {
         display: none;
         flex-direction: column;
+        background: #007BFF;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 200px;
+        padding: 10px;
     }
 
     .nav-links.active {
@@ -219,11 +322,8 @@ header {
         display: block;
     }
 
-    .team {
+    .services-grid {
         flex-direction: column;
-    }
-
-    .team-member {
-        margin-bottom: 20px;
+        align-items: center;
     }
 }
