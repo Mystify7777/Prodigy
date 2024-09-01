@@ -1,0 +1,184 @@
+/* Basic body styling with background image */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    color: #e7e7e7;
+    overflow: hidden;
+    background: url("https://images.unsplash.com/photo-1557626204-59dd03fd2d31?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Weather container border with gradient background */
+.weather-container-border {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(63, 78, 70, 0.8), rgba(31, 38, 55, 0.8), rgba(13, 37, 0, 0.8));
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    max-width: 610px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+
+.weather-container-border:hover {
+    background: linear-gradient(to bottom, rgba(91, 119, 104, 0.95), rgba(31, 38, 55, 0.95), rgba(25, 62, 4, 0.95));
+    padding: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Weather container with gradient background */
+.weather-container {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(33, 50, 69, 0.6), rgba(70, 49, 78, 0.6), rgba(19, 30, 19, 0.6));
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(7, 7, 7, 0.5);
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    transition: all 0.3s ease-out;
+}
+
+.weather-container:hover {
+    background: linear-gradient(to bottom, rgba(33, 50, 69, 0.8), rgba(70, 49, 78, 0.8), rgba(19, 30, 19, 0.8));
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(7, 7, 7, 0.7);
+}
+
+/* Input text styling with hover and focus effects */
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    width: 200px;
+    margin-right: 10px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    background: #cdcfdb;
+    color: #0c0c0c;
+}
+
+input[type="text"]:hover {
+    box-shadow: 0 0 15px rgba(122, 123, 255, 0.5);
+    border-color: #07131d;
+}
+
+input[type="text"]:focus {
+    outline: 2px solid #282638;
+    box-shadow: 0 0 8px rgba(122, 123, 255, 0.5);
+    border-color: #3e3e3e;
+}
+
+/* Button styling with hover effect */
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #36394b;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: #141729;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    border: 1px solid #333;
+}
+
+button:active {
+    background: #3f3f3f;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+    transform: translateY(2px);
+}
+
+/* Weather info section */
+#weather-info {
+    margin-top: 20px;
+}
+
+/* City header styling */
+.city-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#city-name {
+    margin: 0;
+    margin-right: 10px;
+}
+
+/* Weather icon with hover effect */
+#weather-icon {
+    width: 50px;
+    height: 50px;
+    display: none; /* Ensure this is toggled as needed */
+    border: 1px solid rgba(114, 85, 116, 0.545);
+    border-radius: 25%;
+    transition: transform 0.3s ease;
+}
+
+#weather-icon:hover {
+    transform: scale(1.2);
+    border: 2px solid rgb(114, 85, 116);
+}
+
+
+/* Text hover effect for brightness */
+.hover-bright {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.hover-bright:hover {
+    color: #fff;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8),
+                0 0 2px rgba(255, 255, 255, 0.6),
+                0 0 3px rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Weather table styling */
+#weather-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    display: none;
+    background: linear-gradient(to bottom, rgba(33, 50, 69, 0.6), rgba(70, 49, 78, 0.6), rgba(19, 30, 19, 0.6));
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#weather-table th,
+#weather-table td {
+    padding: 12px;
+    border: none;
+    text-align: left;
+    color: #e7e7e7;
+}
+
+#weather-table th {
+    background: linear-gradient(to bottom, rgba(50, 70, 90, 0.7), rgba(80, 60, 90, 0.7));
+    font-weight: bold;
+}
+
+#weather-table tr:nth-child(even) {
+    background: rgba(33, 50, 69, 0.7);
+}
+
+#weather-table tr:nth-child(odd) {
+    background: rgba(50, 70, 90, 0.6);
+}
+
+#weather-table tr:hover {
+    background: rgba(70, 90, 120, 0.8);
+}
+
